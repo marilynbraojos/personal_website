@@ -1,0 +1,8 @@
+.about-container {
+    background-color: hsl(150, 48%, 60%);
+    height: 100vh;   
+}
+
+.about-title {
+    padding: 5em; 
+}
