@@ -1,31 +1,81 @@
 .navbar-container {
-    background-color: rgba(211, 205, 189, 0.7);
-    padding: 0.5em 1em;
+    background-color: transparent;
+    padding: 0.25rem 1.8rem;
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
     display: flex; 
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    text-align: center;
     justify-content: space-between;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-container.scrolled {
+    background-color: rgba(253, 251, 247, 0.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 1.8rem;
+}
+
+.navbar-container .navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-container .navbar-links {
     display: flex; 
     flex-direction: row;
-    gap: 50px;
+    align-items: center;
+    gap: 20px;
 }
 
-.navbar-container a {
+.navbar-container .nav-link {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1.2em;
+    color: #1B2A4A;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+
+.navbar-container .nav-link:hover {
+    color: #EC79B8;
+}
+
+.navbar-container .nav-link.active {
+    font-weight: 700;
+    color: #EC79B8;
+}
+
+.navbar-container .active-flower-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: inline-block;
+    animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .navbar-container .app-logo {
-    height: 2.5em;
-    pointer-events: none;
+    height: 1.8em;
+    transition: height 0.3s ease;
 }

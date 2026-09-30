@@ -1,6 +1,6 @@
 .about-container {
-    background-color: hsl(150, 48%, 60%);
-    height: 100vh;   
+    background-color: #FFF0F5;
+    min-height: 100vh;   
 }
 
 .about-title {
