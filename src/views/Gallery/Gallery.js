@@ -89,14 +89,25 @@ const SECRET_DOG_ITEMS = [
 
 function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
   const [showSecretDogs, setShowSecretDogs] = useState(false);
   const location = useLocation();
+
+  const closeLightbox = () => {
+    if (isClosing || activeIndex === null) return;
+    setIsClosing(true);
+    setTimeout(() => {
+      setActiveIndex(null);
+      setIsClosing(false);
+    }, 280);
+  };
 
   // Reset to main gallery on navbar clicks or navigation
   useEffect(() => {
     const handleReset = () => {
       setShowSecretDogs(false);
       setActiveIndex(null);
+      setIsClosing(false);
     };
 
     handleReset();
@@ -124,7 +135,7 @@ function Gallery() {
       } else if (e.key === 'ArrowRight') {
         nextPhoto();
       } else if (e.key === 'Escape') {
-        setActiveIndex(null);
+        closeLightbox();
       }
     };
 
@@ -139,7 +150,7 @@ function Gallery() {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeIndex, showSecretDogs]);
+  }, [activeIndex, showSecretDogs, isClosing]);
 
   const activePhoto = activeIndex !== null ? currentItems[activeIndex] : null;
 
@@ -195,9 +206,9 @@ function Gallery() {
         ))}
       </div>
 
-      {/* FULLSCREEN LIGHTBOX MODAL */}
+      {/* FULLSCREEN LIGHTBOX MODAL WITH 3D FLIP ANIMATION */}
       {activePhoto && (
-        <div className="lightbox-backdrop" onClick={() => setActiveIndex(null)}>
+        <div className={`lightbox-backdrop ${isClosing ? 'closing' : ''}`} onClick={closeLightbox}>
           <button 
             className="lightbox-arrow prev-arrow" 
             onClick={prevPhoto}
@@ -208,8 +219,8 @@ function Gallery() {
             </svg>
           </button>
 
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <div className="lightbox-polaroid">
+          <div className="lightbox-content" onClick={closeLightbox}>
+            <div className={`lightbox-polaroid ${isClosing ? 'closing' : ''}`} title="Click picture to close">
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
               <div className="lightbox-caption">
                 <h3>{activePhoto.description}</h3>
