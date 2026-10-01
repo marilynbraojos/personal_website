@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/personal_website/static/css/main.3ed834ed.css",
+    "main.css": "/personal_website/static/css/main.f6727b95.css",
     "main.js": "/personal_website/static/js/main.02d5da79.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
     "static/media/zoo_san_diego.webp": "/personal_website/static/media/zoo_san_diego.064263c89b5169fed1ba.webp",
@@ -13,12 +13,12 @@
     "static/media/favicon.png": "/personal_website/static/media/favicon.17cb3e52aa8d9397fa6b.png",
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
-    "main.3ed834ed.css.map": "/personal_website/static/css/main.3ed834ed.css.map",
+    "main.f6727b95.css.map": "/personal_website/static/css/main.f6727b95.css.map",
     "main.02d5da79.js.map": "/personal_website/static/js/main.02d5da79.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ed834ed.css",
+    "static/css/main.f6727b95.css",
     "static/js/main.02d5da79.js"
   ]
 }
