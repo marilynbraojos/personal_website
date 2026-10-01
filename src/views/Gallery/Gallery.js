@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Gallery.css';
 
+import gpodImg from '../../assets/gallery_dogs/gpod.webp';
+import oniImg from '../../assets/gallery_dogs/not_dog_oni.webp';
+import tofuImg from '../../assets/gallery_dogs/not_dog_tofu.webp';
+
 // Main Gallery Items
 const GALLERY_ITEMS = [
   {
@@ -48,42 +52,31 @@ const GALLERY_ITEMS = [
   }
 ];
 
-// Secret Dog Gallery Items (Snoopy Easter Egg)
+// Secret Animal Gallery Items (Snoopy Easter Egg)
 const SECRET_DOG_ITEMS = [
   {
     id: 'dog-1',
-    description: "Snoopy — The Ultimate Beagle Adventurer",
-    location: "📍 Snoopy's Doghouse",
-    image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80",
-    rotation: "-1.8deg"
+    description: "GPOD",
+    location: "Parents: Lacey and Dillan",
+    image: gpodImg,
+    rotation: "-1.8deg",
+    isNotDog: false
   },
   {
     id: 'dog-2',
-    description: "Golden Retriever — Always Ready to Explore",
-    location: "📍 Sunny Meadows",
-    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
-    rotation: "2.1deg"
+    description: "Oni",
+    location: "Parents: Janaki and Jonathan",
+    image: oniImg,
+    rotation: "2.1deg",
+    isNotDog: true
   },
   {
     id: 'dog-3',
-    description: "Australian Shepherd — High Energy Research Buddy",
-    location: "📍 Outdoor Trail Run",
-    image: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80",
-    rotation: "-2.5deg"
-  },
-  {
-    id: 'dog-4',
-    description: "Pembroke Welsh Corgi — Short Legs, Big Personality",
-    location: "📍 Park Lawn",
-    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
-    rotation: "1.2deg"
-  },
-  {
-    id: 'dog-5',
-    description: "Bernese Mountain Dog — Fluffy Alpine Explorer",
-    location: "📍 Mountain Pass",
-    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
-    rotation: "-1.5deg"
+    description: "Mr. Tofu",
+    location: "Parents: Janaki and Jonathan",
+    image: tofuImg,
+    rotation: "-2.2deg",
+    isNotDog: true
   }
 ];
 
@@ -91,8 +84,21 @@ function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
-  const [showSecretDogs, setShowSecretDogs] = useState(false);
-  const location = useLocation();
+  const [showSecretDogs, setShowSecretDogs] = useState(() => {
+    return sessionStorage.getItem('showSecretDogs') === 'true';
+  });
+
+  const openSecretDogs = () => {
+    setShowSecretDogs(true);
+    setActiveIndex(null);
+    sessionStorage.setItem('showSecretDogs', 'true');
+  };
+
+  const closeSecretDogs = () => {
+    setShowSecretDogs(false);
+    setActiveIndex(null);
+    sessionStorage.removeItem('showSecretDogs');
+  };
 
   // Close normally when clicking outside
   const closeNormal = () => {
@@ -113,19 +119,17 @@ function Gallery() {
     }, 280);
   };
 
-  // Reset to main gallery on navbar clicks or navigation
+  // Reset to main gallery when Navbar "Gallery" link is clicked
   useEffect(() => {
     const handleReset = () => {
-      setShowSecretDogs(false);
-      setActiveIndex(null);
+      closeSecretDogs();
       setIsClosing(false);
       setIsFlipping(false);
     };
 
-    handleReset();
     window.addEventListener('resetGallery', handleReset);
     return () => window.removeEventListener('resetGallery', handleReset);
-  }, [location]);
+  }, []);
 
   const currentItems = showSecretDogs ? SECRET_DOG_ITEMS : GALLERY_ITEMS;
 
@@ -171,12 +175,12 @@ function Gallery() {
       <div className="gallery-header">
         {showSecretDogs ? (
           <>
-            <div className="secret-badge-banner">🐶 Secret Easter Egg Unlocked!</div>
-            <h1 className="gallery-title">Favorite Dogs 🐾</h1>
+            <div className="secret-badge-banner">EASTER EGG</div>
+            <h1 className="gallery-title">Favorite Animals 🐾</h1>
             <p className="gallery-subtitle">
-              You found Snoopy's secret collection! Here are some of my absolute favorite dogs.
+              You found a collection of my favorite animals! I hope they bring as much joy to you as they did to me.
             </p>
-            <button className="back-to-main-btn" onClick={() => { setShowSecretDogs(false); setActiveIndex(null); }}>
+            <button className="back-to-main-btn" onClick={closeSecretDogs}>
               ← Back to Main Gallery
             </button>
           </>
@@ -187,7 +191,7 @@ function Gallery() {
               I'm extremely lucky because I'm surrounded by the kindest most incredible people. Check out our adventures!
               <button 
                 className="secret-snoopy-btn" 
-                onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
+                onClick={openSecretDogs}
                 title="Snoopy's Secret Dog Gallery 🐾"
                 aria-label="Secret Dog Gallery"
               >
@@ -206,6 +210,7 @@ function Gallery() {
             style={{ '--rotation': item.rotation }}
             onClick={() => setActiveIndex(index)}
           >
+            {item.isNotDog && <div className="not-dog-ribbon">NOT DOG</div>}
             <div className="polaroid-photo-wrapper">
               <img src={item.image} alt={item.description} className="polaroid-photo" />
             </div>
@@ -237,6 +242,7 @@ function Gallery() {
               onClick={closeWithFlip}
               title="Click picture to flip back"
             >
+              {activePhoto.isNotDog && <div className="not-dog-ribbon lightbox-ribbon">NOT DOG</div>}
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
               <div className="lightbox-caption">
                 <h3>{activePhoto.description}</h3>
