@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import './Gallery.css';
 
+import basilImg from '../../assets/gallery_dogs/basil.webp';
+import bellaImg from '../../assets/gallery_dogs/bella.webp';
+import cocoImg from '../../assets/gallery_dogs/coco.webp';
+import dinkaImg from '../../assets/gallery_dogs/dinka_maria.webp';
+import goatImg from '../../assets/gallery_dogs/goat.webp';
 import gpodImg from '../../assets/gallery_dogs/gpod.webp';
+import lucyNicoleImg from '../../assets/gallery_dogs/lucy_parents_nicole.webp';
+import lucyImg from '../../assets/gallery_dogs/lucy.webp';
 import oniImg from '../../assets/gallery_dogs/not_dog_oni.webp';
 import tofuImg from '../../assets/gallery_dogs/not_dog_tofu.webp';
+import parthCatImg from '../../assets/gallery_dogs/parth_cat.webp';
+import renlyImg from '../../assets/gallery_dogs/renly.webp';
+import tobiImg from '../../assets/gallery_dogs/tobi_parents_nikki.webp';
+import turtleSkippyImg from '../../assets/gallery_dogs/turtle_skippy.webp';
 
 import ssdlImg from '../../assets/gallery/ssdl_fall2025.webp';
 import zooImg from '../../assets/gallery/zoo_san_diego.webp';
@@ -58,7 +68,7 @@ const GALLERY_ITEMS = [
 // Secret Animal Gallery Items (Snoopy Easter Egg)
 const SECRET_DOG_ITEMS = [
   {
-    id: 'dog-1',
+    id: 'dog-gpod',
     description: "GPOD",
     location: "Parents: Lacey and Dillan",
     image: gpodImg,
@@ -66,20 +76,108 @@ const SECRET_DOG_ITEMS = [
     isNotDog: false
   },
   {
-    id: 'dog-2',
-    description: "Oni",
-    location: "Parents: Janaki and Jonathan",
-    image: oniImg,
-    rotation: "2.1deg",
+    id: 'dog-basil',
+    description: "Basil",
+    location: "Parent: Joey",
+    image: basilImg,
+    rotation: "1.5deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-bella',
+    description: "Bella",
+    location: "Parents: Annabel and Carlos",
+    image: bellaImg,
+    rotation: "-2.1deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-coco',
+    description: "Coco",
+    location: "Parent: Desi",
+    image: cocoImg,
+    rotation: "2.2deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-dinka',
+    description: "Dinka Maria",
+    location: "Parents: Claudia and Kenny",
+    image: dinkaImg,
+    rotation: "-1.5deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-goat',
+    description: "GT Goat",
+    location: "Parents: Undetermined",
+    image: goatImg,
+    rotation: "1.8deg",
     isNotDog: true
   },
   {
-    id: 'dog-3',
+    id: 'dog-lucy-nicole',
+    description: "Lucy",
+    location: "Parent: Nicole",
+    image: lucyNicoleImg,
+    rotation: "-2.4deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-lucy',
+    description: "Lucy",
+    location: "Parents: Nancy and Grethel",
+    image: lucyImg,
+    rotation: "1.9deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-oni',
+    description: "Oni",
+    location: "Parents: Janaki and Jonathan",
+    image: oniImg,
+    rotation: "-1.7deg",
+    isNotDog: true
+  },
+  {
+    id: 'dog-tofu',
     description: "Mr. Tofu",
     location: "Parents: Janaki and Jonathan",
     image: tofuImg,
-    rotation: "-2.2deg",
+    rotation: "2.3deg",
     isNotDog: true
+  },
+  {
+    id: 'dog-parth-cat',
+    description: "Name: TBD",
+    location: "Parent: Parth",
+    image: parthCatImg,
+    rotation: "-2.0deg",
+    isNotDog: true
+  },
+  {
+    id: 'dog-renly',
+    description: "Renly",
+    location: "Parent: Sydney",
+    image: renlyImg,
+    rotation: "1.6deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-tobi',
+    description: "Tobi",
+    location: "Parent: Nikki",
+    image: tobiImg,
+    rotation: "-1.9deg",
+    isNotDog: false
+  },
+  {
+    id: 'dog-turtle-skippy',
+    description: "Turtle and Skippy",
+    location: "Parent: Louise",
+    image: turtleSkippyImg,
+    rotation: "2.1deg",
+    isNotDog: false
   }
 ];
 
