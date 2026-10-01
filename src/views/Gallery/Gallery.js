@@ -17,53 +17,71 @@ import renlyImg from '../../assets/gallery_dogs/renly.webp';
 import tobiImg from '../../assets/gallery_dogs/tobi_parents_nikki.webp';
 import turtleSkippyImg from '../../assets/gallery_dogs/turtle_skippy.webp';
 
+import allatoonaImg from '../../assets/gallery/allatoona_trail.webp';
+import barbieImg from '../../assets/gallery/barbie_world.webp';
+import beanImg from '../../assets/gallery/bean.webp';
+import boeingImg from '../../assets/gallery/boeing.webp';
+import bsGradImg from '../../assets/gallery/bs_grad.webp';
+import canadaImg from '../../assets/gallery/canada.webp';
+import cavePrImg from '../../assets/gallery/cave_pr.webp';
+import chattahoocheeImg from '../../assets/gallery/chatahoochee_river_national_park.webp';
+import coloradoImg from '../../assets/gallery/colorado.webp';
+import engagedImg from '../../assets/gallery/engaged.webp';
+import gtGameImg from '../../assets/gallery/gt_game.webp';
+import heatGameImg from '../../assets/gallery/heat_game.webp';
+import jamilImg from '../../assets/gallery/jamil.webp';
+import jplGirliesImg from '../../assets/gallery/jpl_girlies.webp';
+import jplInternImg from '../../assets/gallery/jpl_intern.webp';
+import laurenImg from '../../assets/gallery/lauren.webp';
+import milanImg from '../../assets/gallery/milan.webp';
+import msGradImg from '../../assets/gallery/ms_grad.webp';
+import parentsNycImg from '../../assets/gallery/parents_nyc.webp';
+import phdGradImg from '../../assets/gallery/phd_grad.webp';
+import puertoRicoImg from '../../assets/gallery/puerto_rico.webp';
+import seaweedArtImg from '../../assets/gallery/seaweed_art_cbl.webp';
+import skagwayImg from '../../assets/gallery/skagway_ak.webp';
+import snowboardingImg from '../../assets/gallery/snowboarding.webp';
+import spaceNeedleImg from '../../assets/gallery/space_needle.webp';
+import spacetrekImg from '../../assets/gallery/spacetrek.webp';
+import spacexTourImg from '../../assets/gallery/spacex_tour.webp';
 import ssdlImg from '../../assets/gallery/ssdl_fall2025.webp';
+import streetlightImg from '../../assets/gallery/streetlight.webp';
+import suwonImg from '../../assets/gallery/suwon.webp';
 import zooImg from '../../assets/gallery/zoo_san_diego.webp';
 
 // Main Gallery Items
 const GALLERY_ITEMS = [
-  {
-    id: 1,
-    description: "GT Space Systems Design Lab Crew",
-    location: "Atlanta, GA",
-    image: ssdlImg,
-    rotation: "-2deg"
-  },
-  {
-    id: 2,
-    description: "Zoo with my Favorite Person",
-    location: "San Diego, CA",
-    image: zooImg,
-    rotation: "1.8deg"
-  },
-  {
-    id: 3,
-    description: "Presenting Aerospace Research at AIAA Conference",
-    location: "San Diego, CA",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80",
-    rotation: "-1.2deg"
-  },
-  {
-    id: 4,
-    description: "MS Mechanical Engineering Graduation",
-    location: "University of Florida, Gainesville",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-    rotation: "2.5deg"
-  },
-  {
-    id: 5,
-    description: "Summit Views & Weekend Outdoor Expeditions",
-    location: "Great Smoky Mountains, TN",
-    image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80",
-    rotation: "-2.2deg"
-  },
-  {
-    id: 6,
-    description: "LISA Optical Test Bench Alignment",
-    location: "Space Optics Cleanroom Facility",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-    rotation: "1.5deg"
-  }
+  { id: 1, description: "Allatoona Trail", location: "Atlanta, GA", image: allatoonaImg, rotation: "-1.8deg" },
+  { id: 2, description: "Barbie World", location: "Los Angeles, CA", image: barbieImg, rotation: "2.1deg" },
+  { id: 3, description: "Janaki's Bachelorette", location: "Chicago, IL", image: beanImg, rotation: "-2.4deg" },
+  { id: 4, description: "Boeing Factory", location: "Seattle, WA", image: boeingImg, rotation: "1.6deg" },
+  { id: 5, description: "Go Gators!", location: "Gainesville, FL", image: bsGradImg, rotation: "-1.5deg" },
+  { id: 6, description: "Cruise to Canada", location: "Victoria, Canada", image: canadaImg, rotation: "2.3deg" },
+  { id: 7, description: "Exploring Caves", location: "San Juan, PR", image: cavePrImg, rotation: "-2.0deg" },
+  { id: 8, description: "Chattahoochee River National Park", location: "Atlanta, GA", image: chattahoocheeImg, rotation: "1.9deg" },
+  { id: 9, description: "Skiing with Mark", location: "Breckenridge, CO", image: coloradoImg, rotation: "-1.7deg" },
+  { id: 10, description: "Engaged to my Best Friend", location: "St. Petersburg, FL", image: engagedImg, rotation: "2.2deg" },
+  { id: 11, description: "GT Game with Shan and Nassif", location: "Atlanta, GA", image: gtGameImg, rotation: "-2.1deg" },
+  { id: 12, description: "Heat Game with Carlos Pie", location: "Miami, FL", image: heatGameImg, rotation: "1.7deg" },
+  { id: 13, description: "Dancing with my Favorite Choreographer", location: "Miami, FL", image: jamilImg, rotation: "-1.9deg" },
+  { id: 14, description: "JPL Girlies", location: "Pasadena, CA", image: jplGirliesImg, rotation: "2.4deg" },
+  { id: 15, description: "JPL Internship", location: "Pasadena, CA", image: jplInternImg, rotation: "-1.6deg" },
+  { id: 16, description: "Coolest Mentors at JPL", location: "Pasadena, CA", image: laurenImg, rotation: "1.8deg" },
+  { id: 17, description: "IAC Conference", location: "Milan, Italy", image: milanImg, rotation: "-2.2deg" },
+  { id: 18, description: "MS Graduation", location: "Gainesville, FL", image: msGradImg, rotation: "2.0deg" },
+  { id: 19, description: "Parents", location: "New York City, New York", image: parentsNycImg, rotation: "-1.5deg" },
+  { id: 20, description: "PHinisheD (almost)", location: "Atlanta, GA", image: phdGradImg, rotation: "2.3deg" },
+  { id: 21, description: "ATV Tour", location: "San Juan, PR", image: puertoRicoImg, rotation: "-2.0deg" },
+  { id: 22, description: "Seaweed Art at CBL Conference", location: "New York City, New York", image: seaweedArtImg, rotation: "1.9deg" },
+  { id: 23, description: "Exploring Alaska", location: "Skagway, AK", image: skagwayImg, rotation: "-1.8deg" },
+  { id: 24, description: "Snowboarding", location: "Breckenridge, CO", image: snowboardingImg, rotation: "2.1deg" },
+  { id: 25, description: "Space Needle with In-Laws", location: "Seattle, WA", image: spaceNeedleImg, rotation: "-2.3deg" },
+  { id: 26, description: "Space Trek Camp", location: "Cape Canaveral, FL", image: spacetrekImg, rotation: "1.5deg" },
+  { id: 27, description: "SpaceX Tour", location: "Brownsville, TX", image: spacexTourImg, rotation: "-1.9deg" },
+  { id: 28, description: "GT Space Systems Design Lab Crew", location: "Atlanta, GA", image: ssdlImg, rotation: "2.2deg" },
+  { id: 29, description: "Streetlight <3", location: "Gainesville, FL", image: streetlightImg, rotation: "-1.6deg" },
+  { id: 30, description: "Exploring South Korea", location: "Suwon, South Korea", image: suwonImg, rotation: "1.8deg" },
+  { id: 31, description: "Zoo with my Favorite Person", location: "San Diego, CA", image: zooImg, rotation: "-2.1deg" }
 ];
 
 // Secret Animal Gallery Items (Snoopy Easter Egg)
