@@ -130,14 +130,6 @@ function Gallery() {
           </button>
 
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="lightbox-close-btn" 
-              onClick={() => setActiveIndex(null)}
-              aria-label="Close modal"
-            >
-              ✕
-            </button>
-            
             <div className="lightbox-polaroid">
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
               <div className="lightbox-caption">
