@@ -27,6 +27,7 @@ import cavePrImg from '../../assets/gallery/cave_pr.webp';
 import chattahoocheeImg from '../../assets/gallery/chatahoochee_river_national_park.webp';
 import coloradoImg from '../../assets/gallery/colorado.webp';
 import coolestBroImg from '../../assets/gallery/coolest_bro.webp';
+import dancingMarissaImg from '../../assets/gallery/dancing_marissa.webp';
 import engagedImg from '../../assets/gallery/engaged.webp';
 import familyImg from '../../assets/gallery/family.webp';
 import gtGameImg from '../../assets/gallery/gt_game.webp';
@@ -85,7 +86,8 @@ const GALLERY_ITEMS = [
   { id: 30, description: "GT Space Systems Design Lab Crew", location: "Atlanta, GA", image: ssdlImg, rotation: "2.2deg" },
   { id: 31, description: "Streetlight <3", location: "Gainesville, FL", image: streetlightImg, rotation: "-1.6deg" },
   { id: 32, description: "Exploring South Korea", location: "Suwon, South Korea", image: suwonImg, rotation: "1.8deg" },
-  { id: 33, description: "Zoo with my Favorite Person", location: "San Diego, CA", image: zooImg, rotation: "-2.1deg" }
+  { id: 33, description: "Zoo with my Favorite Person", location: "San Diego, CA", image: zooImg, rotation: "-2.1deg" },
+  { id: 34, description: "Dancing with my Fave Choreographer, Marissa", location: "Los Angeles, CA", image: dancingMarissaImg, rotation: "1.9deg" }
 ];
 
 // Secret Animal Gallery Items (Snoopy Easter Egg)
