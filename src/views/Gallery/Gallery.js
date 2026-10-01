@@ -1,11 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Gallery.css';
 
+// Sample Polaroid Items (Marilyn can easily update images, descriptions, and locations here)
+const GALLERY_ITEMS = [
+  {
+    id: 1,
+    description: "Appalachian Trail Hiking & Mountain Views",
+    location: "📍 Blue Ridge Mountains, GA",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    rotation: "-2deg"
+  },
+  {
+    id: 2,
+    description: "Off-Road Terrain Navigation Field Testing",
+    location: "📍 Georgia Tech Robotics Lab",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    rotation: "1.8deg"
+  },
+  {
+    id: 3,
+    description: "Presenting Aerospace Research at AIAA Conference",
+    location: "📍 San Diego, CA",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80",
+    rotation: "-1.2deg"
+  },
+  {
+    id: 4,
+    description: "MS Mechanical Engineering Graduation",
+    location: "📍 University of Florida, Gainesville",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    rotation: "2.5deg"
+  },
+  {
+    id: 5,
+    description: "Summit Views & Weekend Outdoor Expeditions",
+    location: "📍 Great Smoky Mountains, TN",
+    image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80",
+    rotation: "-2.2deg"
+  },
+  {
+    id: 6,
+    description: "LISA Optical Test Bench Alignment",
+    location: "📍 Space Optics Cleanroom Facility",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+    rotation: "1.5deg"
+  }
+];
+
 function Gallery() {
+  const [activePhoto, setActivePhoto] = useState(null);
+
   return (
-    <div className="view-container">
-      <h1>Gallery</h1>
-      <p>Gallery content coming soon!</p>
+    <div className="gallery-container">
+      <div className="gallery-header">
+        <h1 className="gallery-title">Gallery</h1>
+        <p className="gallery-subtitle">
+          Moments, research milestones, and adventures captured along the way.
+        </p>
+      </div>
+
+      <div className="polaroid-grid">
+        {GALLERY_ITEMS.map((item) => (
+          <div 
+            key={item.id} 
+            className="polaroid-card"
+            style={{ '--rotation': item.rotation }}
+            onClick={() => setActivePhoto(item)}
+          >
+            <div className="polaroid-photo-wrapper">
+              <img src={item.image} alt={item.description} className="polaroid-photo" />
+            </div>
+
+            <div className="polaroid-caption">
+              <p className="polaroid-description">{item.description}</p>
+              <span className="polaroid-location">{item.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* FULLSCREEN LIGHTBOX MODAL */}
+      {activePhoto && (
+        <div className="lightbox-backdrop" onClick={() => setActivePhoto(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close-btn" onClick={() => setActivePhoto(null)}>
+              ✕
+            </button>
+            <div className="lightbox-polaroid">
+              <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
+              <div className="lightbox-caption">
+                <h3>{activePhoto.description}</h3>
+                <span className="lightbox-location">{activePhoto.location}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
