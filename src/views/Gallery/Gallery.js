@@ -179,9 +179,9 @@ function Gallery() {
         {showSecretDogs ? (
           <>
             <div className="secret-badge-banner">EASTER EGG</div>
-            <h1 className="gallery-title">Favorite Animals 🐾</h1>
+            <h1 className="gallery-title">Favorite Dogs 🐾</h1>
             <p className="gallery-subtitle">
-              You found a collection of my favorite animals! I hope they bring as much joy to you as they did to me.
+              You found a collection of my favorite dogs! I hope they bring as much joy to you as they did to me.
             </p>
             <button className="back-to-main-btn" onClick={closeSecretDogs}>
               ← Back to Main Gallery
@@ -243,7 +243,6 @@ function Gallery() {
             <div 
               className={`lightbox-polaroid ${isFlipping ? 'flipping-out' : ''}`} 
               onClick={closeWithFlip}
-              title="Click picture to flip back"
             >
               {activePhoto.isNotDog && <div className="not-dog-ribbon lightbox-ribbon">NOT DOG</div>}
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
