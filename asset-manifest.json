@@ -1,24 +1,35 @@
 {
   "files": {
     "main.css": "/personal_website/static/css/main.f6727b95.css",
-    "main.js": "/personal_website/static/js/main.02d5da79.js",
+    "main.js": "/personal_website/static/js/main.c30a56f1.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
+    "static/media/parth_cat.webp": "/personal_website/static/media/parth_cat.01ec5b132b475501f2f9.webp",
+    "static/media/goat.webp": "/personal_website/static/media/goat.313941337d052e66d9e2.webp",
     "static/media/zoo_san_diego.webp": "/personal_website/static/media/zoo_san_diego.064263c89b5169fed1ba.webp",
+    "static/media/coco.webp": "/personal_website/static/media/coco.5a3f313e5f14163bf83b.webp",
+    "static/media/turtle_skippy.webp": "/personal_website/static/media/turtle_skippy.929a5a4aaf6b5d4bb499.webp",
+    "static/media/tobi_parents_nikki.webp": "/personal_website/static/media/tobi_parents_nikki.e6b44699e40a77e12843.webp",
+    "static/media/lucy_parents_nicole.webp": "/personal_website/static/media/lucy_parents_nicole.30c1eba560bed0ed741a.webp",
     "static/media/not_dog_oni.webp": "/personal_website/static/media/not_dog_oni.838eccbe00d0a0dd493e.webp",
+    "static/media/bella.webp": "/personal_website/static/media/bella.ecbb167ee4494700097e.webp",
+    "static/media/basil.webp": "/personal_website/static/media/basil.6b9868e07778f40d08c7.webp",
+    "static/media/lucy.webp": "/personal_website/static/media/lucy.bcfaa10c8d79711200c4.webp",
     "static/media/not_dog_tofu.webp": "/personal_website/static/media/not_dog_tofu.b19bf0e0fa28d41ce1b0.webp",
     "static/media/ssdl_fall2025.webp": "/personal_website/static/media/ssdl_fall2025.e9c35d0d605ca23262b3.webp",
     "static/media/gpod.webp": "/personal_website/static/media/gpod.b60b9544935b003db3fd.webp",
+    "static/media/renly.webp": "/personal_website/static/media/renly.b9e5f89e744ba286484a.webp",
+    "static/media/dinka_maria.webp": "/personal_website/static/media/dinka_maria.3e77ac13499d321770a6.webp",
     "static/media/braojosgutierrez_resume.pdf": "/personal_website/static/media/braojosgutierrez_resume.687dd5493ee16f076692.pdf",
     "static/media/headshot.png": "/personal_website/static/media/headshot.101d73eb79d86dc6e1da.png",
     "static/media/favicon.png": "/personal_website/static/media/favicon.17cb3e52aa8d9397fa6b.png",
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
     "main.f6727b95.css.map": "/personal_website/static/css/main.f6727b95.css.map",
-    "main.02d5da79.js.map": "/personal_website/static/js/main.02d5da79.js.map",
+    "main.c30a56f1.js.map": "/personal_website/static/js/main.c30a56f1.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6727b95.css",
-    "static/js/main.02d5da79.js"
+    "static/js/main.c30a56f1.js"
   ]
 }
