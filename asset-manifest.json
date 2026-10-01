@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/personal_website/static/css/main.0571c812.css",
-    "main.js": "/personal_website/static/js/main.8630b475.js",
+    "main.css": "/personal_website/static/css/main.a9ed229e.css",
+    "main.js": "/personal_website/static/js/main.f627b48d.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
     "static/media/braojosgutierrez_resume.pdf": "/personal_website/static/media/braojosgutierrez_resume.687dd5493ee16f076692.pdf",
     "static/media/headshot.png": "/personal_website/static/media/headshot.101d73eb79d86dc6e1da.png",
     "static/media/favicon.png": "/personal_website/static/media/favicon.17cb3e52aa8d9397fa6b.png",
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
-    "main.0571c812.css.map": "/personal_website/static/css/main.0571c812.css.map",
-    "main.8630b475.js.map": "/personal_website/static/js/main.8630b475.js.map",
+    "main.a9ed229e.css.map": "/personal_website/static/css/main.a9ed229e.css.map",
+    "main.f627b48d.js.map": "/personal_website/static/js/main.f627b48d.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0571c812.css",
-    "static/js/main.8630b475.js"
+    "static/css/main.a9ed229e.css",
+    "static/js/main.f627b48d.js"
   ]
 }
