@@ -12,11 +12,20 @@
   position: relative;
 }
 
+.gallery-title-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
 .gallery-title {
   font-size: 2.4rem;
   color: #1B2A4A;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .gallery-subtitle {
@@ -27,25 +36,24 @@
   line-height: 1.5;
 }
 
-/* DISCREET FLOATING SNOOPY BUTTON NEAR TOP RIGHT OF PAGE */
+/* DISCREET SNOOPY BUTTON RIGHT BESIDE THE GALLERY TITLE */
 .secret-snoopy-btn {
-  position: fixed;
-  top: 95px;
-  right: 30px;
-  width: 36px;
-  height: 36px;
+  position: relative;
+  top: -2px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1.5px dashed rgba(27, 42, 74, 0.4);
   background: rgba(255, 255, 255, 0.85);
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
-  z-index: 900;
+  font-size: 0.95rem;
+  z-index: 10;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(27, 42, 74, 0.08);
+  box-shadow: 0 2px 6px rgba(27, 42, 74, 0.08);
   transition: all 0.25s ease;
   animation: snoopyFloat 3s infinite ease-in-out;
 }
@@ -55,7 +63,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 }
 
@@ -64,8 +72,8 @@
   background: #ffffff;
   border-color: #1B2A4A;
   border-style: dashed;
-  transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 4px 14px rgba(27, 42, 74, 0.18);
+  transform: scale(1.2) rotate(12deg);
+  box-shadow: 0 4px 12px rgba(27, 42, 74, 0.16);
 }
 
 .secret-badge-banner {

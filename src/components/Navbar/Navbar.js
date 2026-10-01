@@ -61,7 +61,12 @@ function Navbar() {
               key={item.path} 
               to={item.path} 
               className={`nav-link ${isActive ? "active" : ""}`}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                if (item.path === "/gallery") {
+                  window.dispatchEvent(new Event("resetGallery"));
+                }
+              }}
             >
               {isActive && (
                 <img 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Gallery.css';
 
 // Main Gallery Items
@@ -89,6 +90,19 @@ const SECRET_DOG_ITEMS = [
 function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showSecretDogs, setShowSecretDogs] = useState(false);
+  const location = useLocation();
+
+  // Reset to main gallery on navbar clicks or navigation
+  useEffect(() => {
+    const handleReset = () => {
+      setShowSecretDogs(false);
+      setActiveIndex(null);
+    };
+
+    handleReset();
+    window.addEventListener('resetGallery', handleReset);
+    return () => window.removeEventListener('resetGallery', handleReset);
+  }, [location]);
 
   const currentItems = showSecretDogs ? SECRET_DOG_ITEMS : GALLERY_ITEMS;
 
@@ -145,7 +159,17 @@ function Gallery() {
           </>
         ) : (
           <>
-            <h1 className="gallery-title">Gallery</h1>
+            <div className="gallery-title-wrapper">
+              <h1 className="gallery-title">Gallery</h1>
+              <button 
+                className="secret-snoopy-btn" 
+                onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
+                title="Snoopy's Secret Dog Gallery 🐾"
+                aria-label="Secret Dog Gallery"
+              >
+                🐶
+              </button>
+            </div>
             <p className="gallery-subtitle">
               Moments, research milestones, and adventures captured along the way.
             </p>
@@ -172,18 +196,6 @@ function Gallery() {
           </div>
         ))}
       </div>
-
-      {/* DISCREET FLOATING SNOOPY BUTTON (FLOATS AT BOTTOM RIGHT) */}
-      {!showSecretDogs && (
-        <button 
-          className="secret-snoopy-btn" 
-          onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
-          title="Snoopy's Secret Dog Gallery 🐾"
-          aria-label="Secret Dog Gallery"
-        >
-          🐶
-        </button>
-      )}
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
       {activePhoto && (
