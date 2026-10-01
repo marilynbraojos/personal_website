@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal_website/static/css/main.f6727b95.css",
-    "main.js": "/personal_website/static/js/main.c30a56f1.js",
+    "main.js": "/personal_website/static/js/main.256b6eba.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
     "static/media/parth_cat.webp": "/personal_website/static/media/parth_cat.01ec5b132b475501f2f9.webp",
     "static/media/goat.webp": "/personal_website/static/media/goat.313941337d052e66d9e2.webp",
@@ -22,14 +22,15 @@
     "static/media/braojosgutierrez_resume.pdf": "/personal_website/static/media/braojosgutierrez_resume.687dd5493ee16f076692.pdf",
     "static/media/headshot.png": "/personal_website/static/media/headshot.101d73eb79d86dc6e1da.png",
     "static/media/favicon.png": "/personal_website/static/media/favicon.17cb3e52aa8d9397fa6b.png",
+    "static/media/guiness_pluto.png": "/personal_website/static/media/guiness_pluto.6282097c725dc8ede655.png",
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
     "main.f6727b95.css.map": "/personal_website/static/css/main.f6727b95.css.map",
-    "main.c30a56f1.js.map": "/personal_website/static/js/main.c30a56f1.js.map",
+    "main.256b6eba.js.map": "/personal_website/static/js/main.256b6eba.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6727b95.css",
-    "static/js/main.c30a56f1.js"
+    "static/js/main.256b6eba.js"
   ]
 }
