@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 
 // Sample Polaroid Items (Marilyn can easily update images, descriptions, and locations here)
@@ -48,7 +48,44 @@ const GALLERY_ITEMS = [
 ];
 
 function Gallery() {
-  const [activePhoto, setActivePhoto] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const prevPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setActiveIndex((prev) => (prev === 0 ? GALLERY_ITEMS.length - 1 : prev - 1));
+  };
+
+  const nextPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setActiveIndex((prev) => (prev === GALLERY_ITEMS.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activeIndex === null) return;
+      if (e.key === 'ArrowLeft') {
+        prevPhoto();
+      } else if (e.key === 'ArrowRight') {
+        nextPhoto();
+      } else if (e.key === 'Escape') {
+        setActiveIndex(null);
+      }
+    };
+
+    if (activeIndex !== null) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeIndex]);
+
+  const activePhoto = activeIndex !== null ? GALLERY_ITEMS[activeIndex] : null;
 
   return (
     <div className="gallery-container">
@@ -60,12 +97,12 @@ function Gallery() {
       </div>
 
       <div className="polaroid-grid">
-        {GALLERY_ITEMS.map((item) => (
+        {GALLERY_ITEMS.map((item, index) => (
           <div 
             key={item.id} 
             className="polaroid-card"
             style={{ '--rotation': item.rotation }}
-            onClick={() => setActivePhoto(item)}
+            onClick={() => setActiveIndex(index)}
           >
             <div className="polaroid-photo-wrapper">
               <img src={item.image} alt={item.description} className="polaroid-photo" />
@@ -81,11 +118,24 @@ function Gallery() {
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
       {activePhoto && (
-        <div className="lightbox-backdrop" onClick={() => setActivePhoto(null)}>
+        <div className="lightbox-backdrop" onClick={() => setActiveIndex(null)}>
+          <button 
+            className="lightbox-arrow prev-arrow" 
+            onClick={prevPhoto}
+            aria-label="Previous photo"
+          >
+            <span>‹</span>
+          </button>
+
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close-btn" onClick={() => setActivePhoto(null)}>
+            <button 
+              className="lightbox-close-btn" 
+              onClick={() => setActiveIndex(null)}
+              aria-label="Close modal"
+            >
               ✕
             </button>
+            
             <div className="lightbox-polaroid">
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
               <div className="lightbox-caption">
@@ -94,6 +144,14 @@ function Gallery() {
               </div>
             </div>
           </div>
+
+          <button 
+            className="lightbox-arrow next-arrow" 
+            onClick={nextPhoto}
+            aria-label="Next photo"
+          >
+            <span>›</span>
+          </button>
         </div>
       )}
     </div>
