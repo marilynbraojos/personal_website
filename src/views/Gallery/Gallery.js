@@ -6,47 +6,50 @@ import gpodImg from '../../assets/gallery_dogs/gpod.webp';
 import oniImg from '../../assets/gallery_dogs/not_dog_oni.webp';
 import tofuImg from '../../assets/gallery_dogs/not_dog_tofu.webp';
 
+import ssdlImg from '../../assets/gallery/ssdl_fall2025.webp';
+import zooImg from '../../assets/gallery/zoo_san_diego.webp';
+
 // Main Gallery Items
 const GALLERY_ITEMS = [
   {
     id: 1,
-    description: "Appalachian Trail Hiking & Mountain Views",
-    location: "📍 Blue Ridge Mountains, GA",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    description: "GT Space Systems Design Lab Crew",
+    location: "Atlanta, GA",
+    image: ssdlImg,
     rotation: "-2deg"
   },
   {
     id: 2,
-    description: "Off-Road Terrain Navigation Field Testing",
-    location: "📍 Georgia Tech Robotics Lab",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    description: "Zoo with my Favorite Person",
+    location: "San Diego, CA",
+    image: zooImg,
     rotation: "1.8deg"
   },
   {
     id: 3,
     description: "Presenting Aerospace Research at AIAA Conference",
-    location: "📍 San Diego, CA",
+    location: "San Diego, CA",
     image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80",
     rotation: "-1.2deg"
   },
   {
     id: 4,
     description: "MS Mechanical Engineering Graduation",
-    location: "📍 University of Florida, Gainesville",
+    location: "University of Florida, Gainesville",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
     rotation: "2.5deg"
   },
   {
     id: 5,
     description: "Summit Views & Weekend Outdoor Expeditions",
-    location: "📍 Great Smoky Mountains, TN",
+    location: "Great Smoky Mountains, TN",
     image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80",
     rotation: "-2.2deg"
   },
   {
     id: 6,
     description: "LISA Optical Test Bench Alignment",
-    location: "📍 Space Optics Cleanroom Facility",
+    location: "Space Optics Cleanroom Facility",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
     rotation: "1.5deg"
   }
