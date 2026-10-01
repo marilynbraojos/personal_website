@@ -9,6 +9,7 @@
 .gallery-header {
   text-align: center;
   margin-bottom: 35px;
+  position: relative;
 }
 
 .gallery-title {
@@ -24,6 +25,79 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
+}
+
+/* DISCREET FLOATING SNOOPY BUTTON NEAR TOP RIGHT OF PAGE */
+.secret-snoopy-btn {
+  position: fixed;
+  top: 95px;
+  right: 30px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(27, 42, 74, 0.4);
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0.6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  z-index: 900;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(27, 42, 74, 0.08);
+  transition: all 0.25s ease;
+  animation: snoopyFloat 3s infinite ease-in-out;
+}
+
+@keyframes snoopyFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.secret-snoopy-btn:hover {
+  opacity: 1;
+  background: #ffffff;
+  border-color: #1B2A4A;
+  border-style: dashed;
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 4px 14px rgba(27, 42, 74, 0.18);
+}
+
+.secret-badge-banner {
+  display: inline-block;
+  background: rgba(236, 121, 184, 0.2);
+  color: #EC79B8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.back-to-main-btn {
+  background: transparent;
+  border: 2px solid #1B2A4A;
+  color: #1B2A4A;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.2s ease;
+}
+
+.back-to-main-btn:hover {
+  background: #1B2A4A;
+  color: #ffffff;
 }
 
 /* POLAROID GRID (5 PER ROW ON DESKTOP) */
@@ -115,30 +189,6 @@
   z-index: 2010;
 }
 
-.lightbox-close-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: #1B2A4A;
-  color: #ffffff;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.1rem;
-  cursor: pointer;
-  z-index: 2020;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease;
-}
-
-.lightbox-close-btn:hover {
-  background: #EC79B8;
-}
-
 .lightbox-polaroid {
   background: #ffffff;
   padding: 16px 16px 24px 16px;
@@ -172,7 +222,7 @@
   font-weight: 500;
 }
 
-/* CIRCULAR NAVIGATION ARROWS AT PAGE EDGES (IVORY GLOW) */
+/* CIRCULAR NAVIGATION ARROWS AT PAGE EDGES (TRANSLUCENT IVORY GLOW) */
 .lightbox-arrow {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;

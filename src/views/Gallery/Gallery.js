@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 
-// Sample Polaroid Items (Marilyn can easily update images, descriptions, and locations here)
+// Main Gallery Items
 const GALLERY_ITEMS = [
   {
     id: 1,
@@ -47,17 +47,68 @@ const GALLERY_ITEMS = [
   }
 ];
 
+// Secret Dog Gallery Items (Snoopy Easter Egg)
+const SECRET_DOG_ITEMS = [
+  {
+    id: 'dog-1',
+    description: "Snoopy — The Ultimate Beagle Adventurer",
+    location: "📍 Snoopy's Doghouse",
+    image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80",
+    rotation: "-1.8deg"
+  },
+  {
+    id: 'dog-2',
+    description: "Golden Retriever — Always Ready to Explore",
+    location: "📍 Sunny Meadows",
+    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
+    rotation: "2.1deg"
+  },
+  {
+    id: 'dog-3',
+    description: "Australian Shepherd — High Energy Research Buddy",
+    location: "📍 Outdoor Trail Run",
+    image: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80",
+    rotation: "-2.5deg"
+  },
+  {
+    id: 'dog-4',
+    description: "Pembroke Welsh Corgi — Short Legs, Big Personality",
+    location: "📍 Park Lawn",
+    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+    rotation: "1.2deg"
+  },
+  {
+    id: 'dog-5',
+    description: "Bernese Mountain Dog — Fluffy Alpine Explorer",
+    location: "📍 Mountain Pass",
+    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
+    rotation: "-1.5deg"
+  }
+];
+
 function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [showSecretDogs, setShowSecretDogs] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const currentItems = showSecretDogs ? SECRET_DOG_ITEMS : GALLERY_ITEMS;
 
   const prevPhoto = (e) => {
     if (e) e.stopPropagation();
-    setActiveIndex((prev) => (prev === 0 ? GALLERY_ITEMS.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? currentItems.length - 1 : prev - 1));
   };
 
   const nextPhoto = (e) => {
     if (e) e.stopPropagation();
-    setActiveIndex((prev) => (prev === GALLERY_ITEMS.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev === currentItems.length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -83,21 +134,36 @@ function Gallery() {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeIndex]);
+  }, [activeIndex, showSecretDogs]);
 
-  const activePhoto = activeIndex !== null ? GALLERY_ITEMS[activeIndex] : null;
+  const activePhoto = activeIndex !== null ? currentItems[activeIndex] : null;
 
   return (
     <div className="gallery-container">
       <div className="gallery-header">
-        <h1 className="gallery-title">Gallery</h1>
-        <p className="gallery-subtitle">
-          Moments, research milestones, and adventures captured along the way.
-        </p>
+        {showSecretDogs ? (
+          <>
+            <div className="secret-badge-banner">🐶 Secret Easter Egg Unlocked!</div>
+            <h1 className="gallery-title">Favorite Dogs 🐾</h1>
+            <p className="gallery-subtitle">
+              You found Snoopy's secret collection! Here are some of my absolute favorite dogs.
+            </p>
+            <button className="back-to-main-btn" onClick={() => { setShowSecretDogs(false); setActiveIndex(null); }}>
+              ← Back to Main Gallery
+            </button>
+          </>
+        ) : (
+          <>
+            <h1 className="gallery-title">Gallery</h1>
+            <p className="gallery-subtitle">
+              Moments, research milestones, and adventures captured along the way.
+            </p>
+          </>
+        )}
       </div>
 
       <div className="polaroid-grid">
-        {GALLERY_ITEMS.map((item, index) => (
+        {currentItems.map((item, index) => (
           <div 
             key={item.id} 
             className="polaroid-card"
@@ -115,6 +181,18 @@ function Gallery() {
           </div>
         ))}
       </div>
+
+      {/* DISCREET FLOATING SNOOPY BUTTON (FLOATS AT BOTTOM RIGHT) */}
+      {!showSecretDogs && (
+        <button 
+          className="secret-snoopy-btn" 
+          onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
+          title="Snoopy's Secret Dog Gallery 🐾"
+          aria-label="Secret Dog Gallery"
+        >
+          🐶
+        </button>
+      )}
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
       {activePhoto && (
