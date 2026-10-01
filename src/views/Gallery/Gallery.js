@@ -26,7 +26,9 @@ import canadaImg from '../../assets/gallery/canada.webp';
 import cavePrImg from '../../assets/gallery/cave_pr.webp';
 import chattahoocheeImg from '../../assets/gallery/chatahoochee_river_national_park.webp';
 import coloradoImg from '../../assets/gallery/colorado.webp';
+import coolestBroImg from '../../assets/gallery/coolest_bro.webp';
 import engagedImg from '../../assets/gallery/engaged.webp';
+import familyImg from '../../assets/gallery/family.webp';
 import gtGameImg from '../../assets/gallery/gt_game.webp';
 import heatGameImg from '../../assets/gallery/heat_game.webp';
 import jamilImg from '../../assets/gallery/jamil.webp';
@@ -60,28 +62,30 @@ const GALLERY_ITEMS = [
   { id: 7, description: "Exploring Caves", location: "San Juan, PR", image: cavePrImg, rotation: "-2.0deg" },
   { id: 8, description: "Chattahoochee River National Park", location: "Atlanta, GA", image: chattahoocheeImg, rotation: "1.9deg" },
   { id: 9, description: "Skiing with Mark", location: "Breckenridge, CO", image: coloradoImg, rotation: "-1.7deg" },
-  { id: 10, description: "Engaged to my Best Friend", location: "St. Petersburg, FL", image: engagedImg, rotation: "2.2deg" },
-  { id: 11, description: "GT Game with Shan and Nassif", location: "Atlanta, GA", image: gtGameImg, rotation: "-2.1deg" },
-  { id: 12, description: "Heat Game with Carlos Pie", location: "Miami, FL", image: heatGameImg, rotation: "1.7deg" },
-  { id: 13, description: "Dancing with my Favorite Choreographer", location: "Miami, FL", image: jamilImg, rotation: "-1.9deg" },
-  { id: 14, description: "JPL Girlies", location: "Pasadena, CA", image: jplGirliesImg, rotation: "2.4deg" },
-  { id: 15, description: "JPL Internship", location: "Pasadena, CA", image: jplInternImg, rotation: "-1.6deg" },
-  { id: 16, description: "Coolest Mentors at JPL", location: "Pasadena, CA", image: laurenImg, rotation: "1.8deg" },
-  { id: 17, description: "IAC Conference", location: "Milan, Italy", image: milanImg, rotation: "-2.2deg" },
-  { id: 18, description: "MS Graduation", location: "Gainesville, FL", image: msGradImg, rotation: "2.0deg" },
-  { id: 19, description: "Parents", location: "New York City, New York", image: parentsNycImg, rotation: "-1.5deg" },
-  { id: 20, description: "PHinisheD (almost)", location: "Atlanta, GA", image: phdGradImg, rotation: "2.3deg" },
-  { id: 21, description: "ATV Tour", location: "San Juan, PR", image: puertoRicoImg, rotation: "-2.0deg" },
-  { id: 22, description: "Seaweed Art at CBL Conference", location: "New York City, New York", image: seaweedArtImg, rotation: "1.9deg" },
-  { id: 23, description: "Exploring Alaska", location: "Skagway, AK", image: skagwayImg, rotation: "-1.8deg" },
-  { id: 24, description: "Snowboarding", location: "Breckenridge, CO", image: snowboardingImg, rotation: "2.1deg" },
-  { id: 25, description: "Space Needle with In-Laws", location: "Seattle, WA", image: spaceNeedleImg, rotation: "-2.3deg" },
-  { id: 26, description: "Space Trek Camp", location: "Cape Canaveral, FL", image: spacetrekImg, rotation: "1.5deg" },
-  { id: 27, description: "SpaceX Tour", location: "Brownsville, TX", image: spacexTourImg, rotation: "-1.9deg" },
-  { id: 28, description: "GT Space Systems Design Lab Crew", location: "Atlanta, GA", image: ssdlImg, rotation: "2.2deg" },
-  { id: 29, description: "Streetlight <3", location: "Gainesville, FL", image: streetlightImg, rotation: "-1.6deg" },
-  { id: 30, description: "Exploring South Korea", location: "Suwon, South Korea", image: suwonImg, rotation: "1.8deg" },
-  { id: 31, description: "Zoo with my Favorite Person", location: "San Diego, CA", image: zooImg, rotation: "-2.1deg" }
+  { id: 10, description: "Coolest Brother Ever", location: "Miami, FL", image: coolestBroImg, rotation: "1.8deg" },
+  { id: 11, description: "Engaged to my Best Friend", location: "St. Petersburg, FL", image: engagedImg, rotation: "2.2deg" },
+  { id: 12, description: "Family <3", location: "Miami, FL", image: familyImg, rotation: "-2.3deg" },
+  { id: 13, description: "GT Game with Shan and Nassif", location: "Atlanta, GA", image: gtGameImg, rotation: "-2.1deg" },
+  { id: 14, description: "Heat Game with Carlos Pie", location: "Miami, FL", image: heatGameImg, rotation: "1.7deg" },
+  { id: 15, description: "Dancing with my Favorite Choreographer", location: "Miami, FL", image: jamilImg, rotation: "-1.9deg" },
+  { id: 16, description: "JPL Girlies", location: "Pasadena, CA", image: jplGirliesImg, rotation: "2.4deg" },
+  { id: 17, description: "JPL Internship", location: "Pasadena, CA", image: jplInternImg, rotation: "-1.6deg" },
+  { id: 18, description: "Coolest Mentors at JPL", location: "Pasadena, CA", image: laurenImg, rotation: "1.8deg" },
+  { id: 19, description: "IAC Conference", location: "Milan, Italy", image: milanImg, rotation: "-2.2deg" },
+  { id: 20, description: "MS Graduation", location: "Gainesville, FL", image: msGradImg, rotation: "2.0deg" },
+  { id: 21, description: "Parents", location: "New York City, New York", image: parentsNycImg, rotation: "-1.5deg" },
+  { id: 22, description: "PHinisheD (almost)", location: "Atlanta, GA", image: phdGradImg, rotation: "2.3deg" },
+  { id: 23, description: "ATV Tour", location: "San Juan, PR", image: puertoRicoImg, rotation: "-2.0deg" },
+  { id: 24, description: "Seaweed Art at CBL Conference", location: "New York City, New York", image: seaweedArtImg, rotation: "1.9deg" },
+  { id: 25, description: "Exploring Alaska", location: "Skagway, AK", image: skagwayImg, rotation: "-1.8deg" },
+  { id: 26, description: "Snowboarding", location: "Breckenridge, CO", image: snowboardingImg, rotation: "2.1deg" },
+  { id: 27, description: "Space Needle with In-Laws", location: "Seattle, WA", image: spaceNeedleImg, rotation: "-2.3deg" },
+  { id: 28, description: "Space Trek Camp", location: "Cape Canaveral, FL", image: spacetrekImg, rotation: "1.5deg" },
+  { id: 29, description: "SpaceX Tour", location: "Brownsville, TX", image: spacexTourImg, rotation: "-1.9deg" },
+  { id: 30, description: "GT Space Systems Design Lab Crew", location: "Atlanta, GA", image: ssdlImg, rotation: "2.2deg" },
+  { id: 31, description: "Streetlight <3", location: "Gainesville, FL", image: streetlightImg, rotation: "-1.6deg" },
+  { id: 32, description: "Exploring South Korea", location: "Suwon, South Korea", image: suwonImg, rotation: "1.8deg" },
+  { id: 33, description: "Zoo with my Favorite Person", location: "San Diego, CA", image: zooImg, rotation: "-2.1deg" }
 ];
 
 // Secret Animal Gallery Items (Snoopy Easter Egg)
