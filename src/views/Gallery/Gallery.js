@@ -176,7 +176,7 @@ const SECRET_DOG_ITEMS = [
   },
   {
     id: 'dog-parth-cat',
-    description: "Name: TBD",
+    description: "Charli",
     location: "Parent: Parth",
     image: parthCatImg,
     rotation: "-2.0deg",
