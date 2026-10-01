@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal_website/static/css/main.e0c4b30f.css",
-    "main.js": "/personal_website/static/js/main.f1ccf422.js",
+    "main.js": "/personal_website/static/js/main.31b26b7d.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
     "static/media/braojosgutierrez_resume.pdf": "/personal_website/static/media/braojosgutierrez_resume.687dd5493ee16f076692.pdf",
     "static/media/headshot.png": "/personal_website/static/media/headshot.101d73eb79d86dc6e1da.png",
@@ -9,11 +9,11 @@
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
     "main.e0c4b30f.css.map": "/personal_website/static/css/main.e0c4b30f.css.map",
-    "main.f1ccf422.js.map": "/personal_website/static/js/main.f1ccf422.js.map",
+    "main.31b26b7d.js.map": "/personal_website/static/js/main.31b26b7d.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0c4b30f.css",
-    "static/js/main.f1ccf422.js"
+    "static/js/main.31b26b7d.js"
   ]
 }
