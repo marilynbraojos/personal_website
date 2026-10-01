@@ -90,15 +90,26 @@ const SECRET_DOG_ITEMS = [
 function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(false);
   const [showSecretDogs, setShowSecretDogs] = useState(false);
   const location = useLocation();
 
-  const closeLightbox = () => {
+  // Close normally when clicking outside
+  const closeNormal = () => {
+    if (isClosing) return;
+    setActiveIndex(null);
+  };
+
+  // Close with 3D flip motion when clicking the polaroid picture itself
+  const closeWithFlip = (e) => {
+    if (e) e.stopPropagation();
     if (isClosing || activeIndex === null) return;
     setIsClosing(true);
+    setIsFlipping(true);
     setTimeout(() => {
       setActiveIndex(null);
       setIsClosing(false);
+      setIsFlipping(false);
     }, 280);
   };
 
@@ -108,6 +119,7 @@ function Gallery() {
       setShowSecretDogs(false);
       setActiveIndex(null);
       setIsClosing(false);
+      setIsFlipping(false);
     };
 
     handleReset();
@@ -135,7 +147,7 @@ function Gallery() {
       } else if (e.key === 'ArrowRight') {
         nextPhoto();
       } else if (e.key === 'Escape') {
-        closeLightbox();
+        closeNormal();
       }
     };
 
@@ -206,9 +218,9 @@ function Gallery() {
         ))}
       </div>
 
-      {/* FULLSCREEN LIGHTBOX MODAL WITH 3D FLIP ANIMATION */}
+      {/* FULLSCREEN LIGHTBOX MODAL */}
       {activePhoto && (
-        <div className={`lightbox-backdrop ${isClosing ? 'closing' : ''}`} onClick={closeLightbox}>
+        <div className={`lightbox-backdrop ${isFlipping ? 'closing' : ''}`} onClick={closeNormal}>
           <button 
             className="lightbox-arrow prev-arrow" 
             onClick={prevPhoto}
@@ -219,8 +231,12 @@ function Gallery() {
             </svg>
           </button>
 
-          <div className="lightbox-content" onClick={closeLightbox}>
-            <div className={`lightbox-polaroid ${isClosing ? 'closing' : ''}`} title="Click picture to close">
+          <div className="lightbox-content" onClick={closeNormal}>
+            <div 
+              className={`lightbox-polaroid ${isFlipping ? 'flipping-out' : ''}`} 
+              onClick={closeWithFlip}
+              title="Click picture to flip back"
+            >
               <img src={activePhoto.image} alt={activePhoto.description} className="lightbox-photo" />
               <div className="lightbox-caption">
                 <h3>{activePhoto.description}</h3>
