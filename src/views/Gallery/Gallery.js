@@ -89,15 +89,6 @@ const SECRET_DOG_ITEMS = [
 function Gallery() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showSecretDogs, setShowSecretDogs] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const currentItems = showSecretDogs ? SECRET_DOG_ITEMS : GALLERY_ITEMS;
 
