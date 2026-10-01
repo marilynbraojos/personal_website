@@ -14,8 +14,9 @@
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
-.navbar-container.scrolled {
-    background-color: rgba(253, 251, 247, 0.35);
+.navbar-container.scrolled,
+.navbar-container.menu-open {
+    background-color: rgba(253, 251, 247, 0.95);
     backdrop-filter: blur(12px);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
     padding: 0.2rem 1.8rem;
@@ -64,6 +65,46 @@
     animation: fadeIn 0.25s ease-in-out;
 }
 
+.navbar-container .app-logo {
+    height: 1.8em;
+    transition: height 0.3s ease;
+}
+
+/* HAMBURGER TOGGLE BUTTON */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010;
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: #1B2A4A;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* HAMBURGER ANIMATION TO X ICON */
+.hamburger-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -75,7 +116,40 @@
     }
 }
 
-.navbar-container .app-logo {
-    height: 1.8em;
-    transition: height 0.3s ease;
+/* MOBILE RESPONSIVE STYLES (≤ 768px) */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .navbar-container .navbar-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(253, 251, 247, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 24px 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(236, 121, 184, 0.2);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition: all 0.35s ease-in-out;
+    }
+
+    .navbar-container .navbar-links.active {
+        max-height: 400px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar-container .nav-link {
+        font-size: 1.3rem;
+        padding: 6px 12px;
+    }
 }
