@@ -12,47 +12,39 @@
   position: relative;
 }
 
-.gallery-title-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  margin-bottom: 8px;
-}
-
 .gallery-title {
   font-size: 2.4rem;
   color: #1B2A4A;
   font-weight: 800;
-  margin: 0;
+  margin-bottom: 8px;
 }
 
 .gallery-subtitle {
   font-size: 1.05rem;
   color: #555;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* DISCREET SNOOPY BUTTON RIGHT BESIDE THE GALLERY TITLE */
+/* DISCREET SNOOPY BUTTON AT END OF GALLERY SUBTITLE BLURB */
 .secret-snoopy-btn {
-  position: relative;
-  top: -2px;
-  width: 32px;
-  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   border: 1.5px dashed rgba(27, 42, 74, 0.4);
   background: rgba(255, 255, 255, 0.85);
   opacity: 0.65;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  z-index: 10;
+  font-size: 0.85rem;
   padding: 0;
+  margin-left: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
   box-shadow: 0 2px 6px rgba(27, 42, 74, 0.08);
   transition: all 0.25s ease;
   animation: snoopyFloat 3s infinite ease-in-out;

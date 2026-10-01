@@ -159,8 +159,9 @@ function Gallery() {
           </>
         ) : (
           <>
-            <div className="gallery-title-wrapper">
-              <h1 className="gallery-title">Gallery</h1>
+            <h1 className="gallery-title">Gallery</h1>
+            <p className="gallery-subtitle">
+              Moments, research milestones, and adventures captured along the way.
               <button 
                 className="secret-snoopy-btn" 
                 onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
@@ -169,9 +170,6 @@ function Gallery() {
               >
                 🐶
               </button>
-            </div>
-            <p className="gallery-subtitle">
-              Moments, research milestones, and adventures captured along the way.
             </p>
           </>
         )}
