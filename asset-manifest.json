@@ -1,10 +1,12 @@
 {
   "files": {
     "main.css": "/personal_website/static/css/main.3ed834ed.css",
-    "main.js": "/personal_website/static/js/main.af5a60d6.js",
+    "main.js": "/personal_website/static/js/main.3da45a23.js",
     "static/js/453.9e39dd13.chunk.js": "/personal_website/static/js/453.9e39dd13.chunk.js",
+    "static/media/zoo_san_diego.webp": "/personal_website/static/media/zoo_san_diego.064263c89b5169fed1ba.webp",
     "static/media/not_dog_oni.webp": "/personal_website/static/media/not_dog_oni.838eccbe00d0a0dd493e.webp",
     "static/media/not_dog_tofu.webp": "/personal_website/static/media/not_dog_tofu.b19bf0e0fa28d41ce1b0.webp",
+    "static/media/ssdl_fall2025.webp": "/personal_website/static/media/ssdl_fall2025.e9c35d0d605ca23262b3.webp",
     "static/media/gpod.webp": "/personal_website/static/media/gpod.b60b9544935b003db3fd.webp",
     "static/media/braojosgutierrez_resume.pdf": "/personal_website/static/media/braojosgutierrez_resume.687dd5493ee16f076692.pdf",
     "static/media/headshot.png": "/personal_website/static/media/headshot.101d73eb79d86dc6e1da.png",
@@ -12,11 +14,11 @@
     "static/media/pink_flower.webp": "/personal_website/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "index.html": "/personal_website/index.html",
     "main.3ed834ed.css.map": "/personal_website/static/css/main.3ed834ed.css.map",
-    "main.af5a60d6.js.map": "/personal_website/static/js/main.af5a60d6.js.map",
+    "main.3da45a23.js.map": "/personal_website/static/js/main.3da45a23.js.map",
     "453.9e39dd13.chunk.js.map": "/personal_website/static/js/453.9e39dd13.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ed834ed.css",
-    "static/js/main.af5a60d6.js"
+    "static/js/main.3da45a23.js"
   ]
 }
