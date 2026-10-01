@@ -184,7 +184,7 @@ function Gallery() {
           <>
             <h1 className="gallery-title">Gallery</h1>
             <p className="gallery-subtitle">
-              Moments, research milestones, and adventures captured along the way.
+              I'm extremely lucky because I'm surrounded by the kindest most incredible people. Check out our adventures!
               <button 
                 className="secret-snoopy-btn" 
                 onClick={() => { setShowSecretDogs(true); setActiveIndex(null); }}
