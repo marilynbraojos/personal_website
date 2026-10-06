@@ -21,24 +21,22 @@ function Home() {
             <div className="tag-pills">
               <span className="tag-pill">Researcher</span>
               <span className="tag-pill">Engineer</span>
-              <span className="tag-pill">Adventurer</span>
+              <span className="tag-pill">Rocket Enthusiast</span>
             </div>
 
             <p className="hero-bio">
-              I'm a PhD student in Robotics Aerospace Engineering at Georgia Tech with an expected graduation of May 2027.
+              I am a PhD student in robotics with the aerospace engineering department at Georgia Tech with an expected graduation of May 2027. My research focuses on increasing resilience and autonomy in space systems with atomic clock predictive modeling and uncertainty-aware algorithms.
             </p>
 
             <div className="education-highlights">
               <div className="edu-item">
-                <span className="edu-icon">🎓</span>
                 <div>
-                  <strong>PhD in Robotics Aerospace Engineering</strong>
+                  <strong>PhD in Aerospace Engineering Robotics</strong>
                   <span className="edu-sub">Georgia Tech — Exp. May 2027</span>
                 </div>
               </div>
 
               <div className="edu-item">
-                <span className="edu-icon">🎓</span>
                 <div>
                   <strong>MS in Mechanical Engineering</strong>
                   <span className="edu-sub">University of Florida — 2022</span>
@@ -46,7 +44,6 @@ function Home() {
               </div>
 
               <div className="edu-item">
-                <span className="edu-icon">🎓</span>
                 <div>
                   <strong>BS in Mechanical Engineering & BS in Neuroscience</strong>
                   <span className="edu-sub">University of Florida — 2020</span>

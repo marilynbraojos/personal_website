@@ -7,7 +7,7 @@ import cocoImg from '../../assets/gallery_dogs/coco.webp';
 import dinkaImg from '../../assets/gallery_dogs/dinka_maria.webp';
 import goatImg from '../../assets/gallery_dogs/goat.webp';
 import gpodImg from '../../assets/gallery_dogs/gpod.webp';
-import guinessPlutoImg from '../../assets/gallery_dogs/guiness_pluto.png';
+import guinessPlutoImg from '../../assets/gallery_dogs/guiness_pluto.webp';
 import lucyNicoleImg from '../../assets/gallery_dogs/lucy_parents_nicole.webp';
 import lucyImg from '../../assets/gallery_dogs/lucy.webp';
 import oniImg from '../../assets/gallery_dogs/not_dog_oni.webp';
@@ -143,14 +143,14 @@ const SECRET_DOG_ITEMS = [
   {
     id: 'dog-goat',
     description: "GT Goat",
-    location: "Parents: Undetermined",
+    location: "Parent: Unknown",
     image: goatImg,
     rotation: "1.8deg",
     isNotDog: true
   },
   {
     id: 'dog-lucy-nicole',
-    description: "Lucy",
+    description: "Lulu",
     location: "Parent: Nicole",
     image: lucyNicoleImg,
     rotation: "-2.4deg",

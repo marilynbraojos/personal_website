@@ -121,8 +121,24 @@
     }
 }
 
+.mobile-nav-backdrop {
+    display: none;
+}
+
 /* MOBILE RESPONSIVE STYLES (≤ 768px) */
 @media (max-width: 768px) {
+    .mobile-nav-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.15);
+        z-index: 999;
+        backdrop-filter: blur(2px);
+    }
+
     .hamburger-btn {
         display: flex;
     }
